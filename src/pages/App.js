@@ -27,27 +27,27 @@ const App = () => {
   const isStarted = useSelector(state => state.bingo.isStarted);
   const count = useSelector(state => state.bingo.count);
 
-  const [bingoArr1, setBingoArr1] = useState(Array(25).fill(0).map((v, i) => i + 1));
-  const [bingoArr2, setBingoArr2] = useState(Array(25).fill(0).map((v, i) => i + 1));
+  const [bingoArr1, setBingoArr1] = useState(Array(25).fill(0).map((v, i) => i + 1)); // 랜덤 배열 1
+  const [bingoArr2, setBingoArr2] = useState(Array(25).fill(0).map((v, i) => i + 1)); // 랜덤 배열 2
 
   const handleGameStart = () => {
     setBingoArr1(shuppleArr(bingoArr1));
     setBingoArr2(shuppleArr(bingoArr2));
 
-    dispatch(reset());
-    dispatch(startGame());
+    dispatch(reset()); // 시작 전 초기화
+    dispatch(startGame()); // 게임 시작
   }
 
   return (
     <div className='App'>
       <header>
         <button onClick={handleGameStart}>{isStarted ? '게임 재시작' : '게임 시작'}</button>
-        <button>{isStarted && `player${count % 2 === 0 ? 1 : 2} 의 차례입니다.`}</button>
+        <button>{isStarted && `player${count % 2 === 0 ? 1 : 2}의 차례입니다.`}</button>
       </header>
-      <section>
+      <main>
         <Board array={bingoArr1} player={1} />
         <Board array={bingoArr2} player={2} />
-      </section>
+      </main>
     </div>
   );
 };
