@@ -1,0 +1,19 @@
+.Board {
+    margin: 20px;
+
+    p {
+        margin-bottom: 10px;
+    }
+
+    &-cells {
+        width: 400px;
+        height: 400px;
+        display: grid;
+        grid-template-rows: repeat(5, 1fr);
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .item {
+        border: 1px solid white;
+    }
+}
