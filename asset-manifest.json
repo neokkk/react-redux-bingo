@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/react-redux-bingo/static/css/main.d59d4745.chunk.css",
+    "main.js": "/react-redux-bingo/static/js/main.55b7a213.chunk.js",
+    "main.js.map": "/react-redux-bingo/static/js/main.55b7a213.chunk.js.map",
+    "runtime-main.js": "/react-redux-bingo/static/js/runtime-main.a12b2a49.js",
+    "runtime-main.js.map": "/react-redux-bingo/static/js/runtime-main.a12b2a49.js.map",
+    "static/js/2.fa054ec8.chunk.js": "/react-redux-bingo/static/js/2.fa054ec8.chunk.js",
+    "static/js/2.fa054ec8.chunk.js.map": "/react-redux-bingo/static/js/2.fa054ec8.chunk.js.map",
+    "index.html": "/react-redux-bingo/index.html",
+    "precache-manifest.772df0ee6ff43222dd902774d7f262ef.js": "/react-redux-bingo/precache-manifest.772df0ee6ff43222dd902774d7f262ef.js",
+    "service-worker.js": "/react-redux-bingo/service-worker.js",
+    "static/css/main.d59d4745.chunk.css.map": "/react-redux-bingo/static/css/main.d59d4745.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a12b2a49.js",
+    "static/js/2.fa054ec8.chunk.js",
+    "static/css/main.d59d4745.chunk.css",
+    "static/js/main.55b7a213.chunk.js"
+  ]
+}
