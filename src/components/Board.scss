@@ -1,3 +1,5 @@
+$border: 1px solid gray;
+
 .Board {
     margin: 20px;
 
@@ -8,13 +10,19 @@
     &-cells {
         width: 400px;
         height: 400px;
+        border {
+            top: $border;
+            left: $border;
+        } 
         display: grid;
         grid-template-rows: repeat(5, 1fr);
         grid-template-columns: repeat(5, 1fr);
     }
 
     .item {
-        border: 1px solid gray;
-        border-collapse: collapse;
+        border {
+            right: $border;
+            bottom: $border;
+        }
     }
 }

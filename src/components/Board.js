@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import './Board.scss';
 import BoardCell from './BoardCell';
 
-import { reset } from '../store/modules/bingo';
+import { endGame } from '../store/modules/bingo';
 
 /* 빙고 인덱스 배열 */
 const bingoArr = [
@@ -28,7 +28,7 @@ const Board = ({ array, player }) => {
     const [clickedIndexArr, setClickedIndexArr] = useState([]); // 클릭한 숫자의 인덱스 담는 배열
 
     useEffect(() => {
-        if (!clickedCell.length) { // 재시작 클릭하면 배열 초기화
+        if (!clickedCell.length) { // 재시작하면 인덱스 배열 초기화
             setClickedIndexArr([]);
         }
 
@@ -37,6 +37,7 @@ const Board = ({ array, player }) => {
         });
     }, [clickedCell]);
 
+    /* 빙고 검증 */
     if (clickedIndexArr.length > 4) { // 클릭한 수가 5개 이상일 때
         bingoArr.forEach(v1 => {
             const mapped = v1.map(v2 => { // 클릭한 수의 인덱스 배열이 빙고 배열과 일치할 경우
@@ -46,9 +47,8 @@ const Board = ({ array, player }) => {
             });
 
             if (!mapped.filter(v => v !== 0).length) { // 빙고!
-                alert(`빙고! player${player}가 승리하였습니다.`);
-                setClickedIndexArr([]); // 초기화
-                dispatch(reset('all'));
+                dispatch(endGame(player)); // 빙고를 외친 플레이어 추가
+                setClickedIndexArr([]); // 인덱스 배열 초기화
             }
         });
     }
